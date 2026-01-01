@@ -1,26 +1,58 @@
 {
-  "manifest_version": 3,
-  "name": "Vinted Brand Remover",
+  "manifest_version": 2,
+  "name": "Vinted Brand Filter",
   "version": "1.0.0",
-  "description": "Remove brand information from Vinted search results",
-  "permissions": ["scripting", "activeTab"],
-  "host_permissions": [
-    "https://*.vinted.com/*",
-    "https://*.vinted.be/*"
+  "description": "Filter out unwanted brands from Vinted search results",
+  "permissions": [
+    "storage",
+    "*://*.vinted.com/*",
+    "*://*.vinted.fr/*",
+    "*://*.vinted.be/*",
+    "*://*.vinted.de/*",
+    "*://*.vinted.nl/*",
+    "*://*.vinted.es/*",
+    "*://*.vinted.it/*",
+    "*://*.vinted.pl/*",
+    "*://*.vinted.lt/*",
+    "*://*.vinted.cz/*",
+    "*://*.vinted.sk/*",
+    "*://*.vinted.at/*",
+    "*://*.vinted.pt/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://*.vinted.com/*",
-        "https://*.vinted.be/*"
+        "*://*.vinted.com/*",
+        "*://*.vinted.fr/*",
+        "*://*.vinted.be/*",
+        "*://*.vinted.de/*",
+        "*://*.vinted.nl/*",
+        "*://*.vinted.es/*",
+        "*://*.vinted.it/*",
+        "*://*.vinted.pl/*",
+        "*://*.vinted.lt/*",
+        "*://*.vinted.cz/*",
+        "*://*.vinted.sk/*",
+        "*://*.vinted.at/*",
+        "*://*.vinted.pt/*"
       ],
-      "js": ["content.js"],
+      "js": [
+        "content.js"
+      ],
       "run_at": "document_end"
     }
   ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
   "icons": {
-    "16": "icons/icon.png",
-    "48": "icons/icon.png",
-    "128": "icons/icon.png"
-  }
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
 }

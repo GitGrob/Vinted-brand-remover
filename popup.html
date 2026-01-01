@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            width: 350px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+        }
+
+        h2 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        #brandInput {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        #addBtn {
+            padding: 8px 16px;
+            background: #09b1ba;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        #addBtn:hover {
+            background: #088a91;
+        }
+
+        .brands-list {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px;
+        }
+
+        .brand-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+
+        .brand-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .brand-name {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .remove-btn {
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 4px 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .remove-btn:hover {
+            background: #ee5a6f;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 30px 15px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .info {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #1976d2;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Vinted Brand Filter</h2>
+
+    <div class="input-group">
+        <input type="text" id="brandInput" placeholder="Enter brand name (e.g., Zara, H&M)" autocomplete="off">
+        <button id="addBtn">Add</button>
+    </div>
+
+    <div class="brands-list" id="brandsList">
+        <div class="empty-state">No brands blocked yet</div>
+    </div>
+
+    <div class="info">
+        Items from these brands will be hidden from your Vinted search results. Refresh the page after adding brands.
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
